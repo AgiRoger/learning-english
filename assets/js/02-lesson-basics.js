@@ -252,31 +252,54 @@
 
   P({
     id: 'osascomp', step: 1, level: 'Dasar', cat: 'Sentence Structure',
-    title: 'O-S-A-S-C-O-M-P (alat bantu belajar)',
-    hook: 'ALAT BANTU belajar, bukan hukum mutlak bahasa Inggris.',
-    simple: 'O-S-A-S-C-O-M-P itu mnemonic (kode ingatan) untuk mengingat kerangka kalimat. Dipakai untuk membantu kamu melihat urutan kata, BUKAN aturan wajib yang selalu berlaku.',
-    eli10: 'Ini kayak "kunci untuk mengingat urutan kata. Tapi hati-hati: beberapa kalimat (misalnya "Here comes the bus") nggak ikut aturan ini. Jadi pakai buat latihan, bukan buat dihafal sebagai hukum.',
-    meaning: 'Delapan unsur yang biasa dicari saat menganalisis kalimat: Order, Subject, Auxiliary, Verb, Complement, Object, Modifier, Predicate. Order dipakai untuk memilih bentuk kalimat yang paling natural; bukan SUSUNAN WAJIB yang di urutan itu.',
-    when: 'Saat latihan menganalisis kalimat, atau saat menerjemahkan dari bahasa lain. Karena susunan kalimat Inggris berbeda, urutan ini membantu kamu memilih susunan yang paling natural.',
-    why: 'Alat bantu diagnosis. Yang paling penting: VERB selalu di bagian tengah (setelah subjek), baru object/complement/modifier setelahnya. Ini yang bikin error kelihatan.',
+    title: 'O-S-A-S-C-O-M-P (urutan kata sifat)',
+    hook: 'Delapan huruf untuk mengingat urutan kata sifat yang benar.',
+    simple: 'O-S-A-S-C-O-M-P adalah alat bantu untuk menyusun KATA SIFAT, bukan urutan kata kalimat. Kalau satu kata benda punya beberapa kata sifat, huruf-huruf ini yang menentukan urutannya.',
+    eli10: 'Bayangkan kamu menjelaskan barang di depan orang. Kamu akan bilang lebih dulu "ini bagus", baru "kecil", baru "sudah lama", baru "bentuknya bulat", baru "warnanya hijau", baru "made in Indonesia", baru "bahannya kayu", baru "dipakai buat makan". Kalau urutannya diacak, pendengarnya bingung.',
+    meaning: 'Delapan jenis kata sifat, ditulis dari yang paling umum ke yang paling spesifik: Opinion (pendapat), Size (ukuran), Age (usia), Shape (bentuk), Color (warna), Origin (asal), Material (bahan), Purpose (tujuan).',
+    when: 'Pakai begitu kamu menumpuk dua kata sifat atau lebih di depan satu kata benda: "a lovely little old green French wooden table". Kalau cuma satu kata sifat, urutan ini tidak kelihatan.',
+    why: 'Urutannya menurun dari yang paling subjektif ke yang paling spesifik. Opinion paling subjektif dan paling sering diucapkan duluan, Purpose paling spesifik dan paling dekat dengan kata bendanya. Karena itu urutannya tidak boleh dibalik: bukan karena susunannya wajib, tapi karena bahasa Inggris mengaturnya begitu supaya kalimatnya enak dibaca.',
     whyNot: [
-      { t: 'Hukum mutlak', d: '"Here comes the bus." di sini subject (the bus) ada di belakang verb. Jadi O-S-A-S-C-O-M-P bukan urutan wajib — cuma alat bantu.' },
-      { t: 'Urutan natural', d: 'Bahasa Indonesia: "Nasi saya makan" → Inggris: "I eat rice". Karena verb-nya harus di belakang subjek di Inggris, kita perlu "menaikkan" kata kerjanya.' }
+      { t: 'Bukan urutan kata kalimat', d: 'Ini bukan S-V-O. Urutan kata kalimat dibahas di materi "Urutan Kata Bahasa Inggris". OSASCOMP hanya untuk kata sifat di dalam satu kelompok kata.' },
+      { t: 'Tidak wajib dipakai', d: 'Orang Inggris biasanya cuma memakai satu atau dua kata sifat, misalnya "a nice red car". OSASCOMP baru terasa begitu kamu memakai tiga kata sifat atau lebih.' }
     ],
-    formula: 'O-S-A-S-C-O-M-P = alat bantu, bukan standar universal',
+    formula: 'Op + Sz + Ag + Sh + Co + Or + Ma + Pu + noun  =  a lovely little old green French wooden table',
+    adjective_order: [
+      { k: 'O', name: 'Opinion', arti: 'pendapat', what: 'Kata sifat yang berisi penilaian atau perasaan. Paling subjektif, karena ini hanya pendapat, bukan fakta.', ex: ['lovely', 'beautiful', 'nice', 'wonderful', 'ugly', 'terrible', 'silly', 'delicious'], when: 'Selalu di urutan paling depan kalau dipakai. Ini yang paling sering diucapkan orang, jadi paling sering didengar juga.' },
+      { k: 'S', name: 'Size', arti: 'ukuran', what: 'Menyatakan besar atau kecilnya benda.', ex: ['big', 'small', 'huge', 'tiny', 'long', 'short', 'tall', 'enormous'], when: 'Setelah Opinion. Kalau butuh dua ukuran, pilih yang paling penting saja: "a small room", bukan "a small big room".' },
+      { k: 'A', name: 'Age', arti: 'usia', what: 'Menyatakan umur atau kebaruan bendanya.', ex: ['old', 'new', 'young', 'ancient', 'antique', 'modern', 'brand-new'], when: 'Setelah Size. Bisa untuk benda ("an old house") maupun untuk orang ("an old man").' },
+      { k: 'S', name: 'Shape', arti: 'bentuk', what: 'Menyatakan bentuk bendanya.', ex: ['round', 'square', 'rectangular', 'circular', 'oval', 'triangular', 'flat'], when: 'Setelah Age. Cuma perlu kalau bendanya memang berbentuk yang khas, seperti meja, jendela, atau rambu lalu lintas.' },
+      { k: 'C', name: 'Color', arti: 'warna', what: 'Menyatakan warnanya.', ex: ['red', 'blue', 'green', 'black', 'white', 'pink', 'grey', 'dark', 'light'], when: 'Setelah Shape. Kalau dua warna, gabung dengan and: "a black and white photo".' },
+      { k: 'O', name: 'Origin', arti: 'asal', what: 'Menyatakan asal pembuatan atau asalnya. Hampir selalu berupa nama negara, kota, atau daerah, dan ditulis dengan huruf besar.', ex: ['French', 'Indonesian', 'Japanese', 'American', 'Brazilian', 'Turkish', 'northern', 'southern'], when: 'Setelah Color. "French wine" berarti wine yang berasal dari Prancis. Dan "northern" bukan nama negara, tapi arah: "northern Europe".' },
+      { k: 'M', name: 'Material', arti: 'bahan', what: 'Menyatakan bahan pembuatannya. Bentuknya dua: kata benda ditambah -en (wood menjadi wooden), atau langsung nama bahannya (silver, steel, glass, cotton).', ex: ['wooden', 'silver', 'steel', 'plastic', 'leather', 'glass', 'cotton', 'iron'], when: 'Setelah Origin. Perhatikan pasangan yang tidak bisa ditukar: "a wooden spoon", bukan "a wood spoon". Tapi "a silver ring" dan "a steel bridge" memang boleh.' },
+      { k: 'P', name: 'Purpose', arti: 'untuk apa', what: 'Menyatakan kegunaan bendanya. Bentuknya kata benda yang dipakai apa adanya, tanpa -ing dan tanpa -ed.', ex: ['walking', 'sleeping', 'drinking', 'wedding', 'tennis', 'hiking', 'reading'], when: 'Selalu paling dekat dengan kata bendanya, di urutan terakhir. "a sleeping bag", bukan "a bag sleeping".' }
+    ],
     examples: [
-      'I eat rice every morning → S(I) + V(eat) + O(rice) + M(every morning).',
-      'She is reading a book → A(is) + S(she) + V(reading) + O(a book).',
-      'Here comes the bus → kalimat natural yang tidak mengikuti urutan ini.'
+      'a **lovely** **little** **old** **green** **French** **wooden** **table** → lovely (Op), little (Sz), old (Ag), green (Co), French (Or), wooden (Ma).',
+      'an **old** **round** **black** **car** → old (Ag), round (Sh), black (Co).',
+      'a **sleeping** **bag** → sleeping (Pu), jadi tepat sebelum kata benda.',
+      'a **black and white** **photo** → dua warna dari kategori yang sama, jadi digabung dengan and.'
     ],
     mistakes: [
-      { wrong: 'Nasi saya makan setiap pagi.', right: 'I eat rice every morning.', why: 'Verba harus naik ke belakang subjek. Setelah subjek, baru kata kerja, baru objek.' }
+      { wrong: 'a wooden French beautiful table', right: 'a beautiful French wooden table', why: 'Opinion harus paling depan, lalu Origin, baru Material. Kalau dibalik, urutannya tidak natural.' },
+      { wrong: 'a red big car', right: 'a big red car', why: 'Size (big) selalu mendahului Color (red), bukan sebaliknya.' },
+      { wrong: 'a new leather small bag', right: 'a small new leather bag', why: 'Size dulu, lalu Age, baru Material.' },
+      { wrong: 'a bag sleeping', right: 'a sleeping bag', why: 'Purpose harus tepat sebelum kata benda, bukan sesudahnya.' },
+      { wrong: 'a very red car', right: 'a bright red car', why: 'very tidak bisa dipakai di depan kata sifat warna. Pakai penguat yang sudah mengandung warna: bright, dark, light, pale.' }
     ],
-    clues: ['V(predicate) selalu setelah subjek — itu yang paling penting', 'Auxiliary (am/is/are/have/will) selalu paling depan di bagian verb', 'Object & complement baru boleh muncul setelah ada verb'],
+    clues: [
+      'Huruf O muncul dua kali. Yang pertama Opinion, yang kedua Origin.',
+      'Semakin ke kanan, semakin spesifik: Opinion paling umum, Purpose paling khusus.',
+      'Purpose bukan kata kerja. "sleeping" di "sleeping bag" artinya "untuk tidur", bukan "sedang tidur".',
+      'Nama negara ditulis huruf besar: French, Indonesian, Japanese.',
+      'Kebanyakan orang hanya memakai satu atau dua. Tidak perlu memaksakan semua delapan.'
+    ],
     practice: [
-      { q: 'Urutkan mana yang benar menurut O-S-A-S-C-O-M-P: "___ the students ___ their books"?', opts: ['Subject – Object – Modifier', 'The students read their books', 'The books their students read'], ans: 1, explain: 'Subjek dulu (the students), baru kata kerja (read), baru objek (their books).' }
+      { q: 'Urutkan yang benar: "a ___ ___ car" dengan kata sifat red dan big.', opts: ['big red', 'red big', 'dua-duanya sama natural'], ans: 0, explain: 'Size (big) selalu mendahului Color (red), jadi "a big red car".' },
+      { q: 'Mana yang urutannya BENAR?', opts: ['a lovely small old green table', 'a green small lovely table', 'a small lovely green old table'], ans: 0, explain: 'Opinion (lovely) harus di depan, lalu Size (small), lalu Age (old), baru Color (green). Dua opsi lain mencampuradukkannya.' },
+      { q: 'Dalam "walking shoes", kata sifat "walking" termasuk huruf yang mana?', opts: ['P (Purpose)', 'O (Opinion)', 'M (Material)'], ans: 0, explain: '"Walking" menjelaskan kegunaan sepasang sepatu, jadi Purpose, dan letaknya paling dekat dengan kata benda.' }
     ],
-    tips: 'Pakai O-S-A-S-C-O-M-P sebagai cermin: kalau kalimatmu terasa aneh, cek apakah verb-nya sudah naik ke posisi yang benar.'
+    tips: 'Kalau malas menghafal delapan huruf: Opinion dan Size hampir selalu muncul, lalu Age, lalu Color. Empat itu yang paling sering dipakai dalam percakapan sehari-hari. Shape, Origin, Material, dan Purpose baru muncul di deskripsi barang atau tempat.'
   });
 
   /* ---------------- STEP 2 — LEARN WORD TYPES ---------------- */
@@ -396,7 +419,7 @@
     practice: [
       { q: 'Mana yang berfungsi sebagai ADJECTIVE? "The children were very tired."', opts: ['children', 'very', 'tired'], ans: 2, explain: '"tired" menggambarkan "children" dan juga melengkapi linking verb "were". "very" cuma pokemon penguat sifat.' }
     ],
-    tips: 'Urutan adjective: opinion – size – age – shape – color – origin – material – purpose. "a beautiful small old round brown Italian wooden table".'
+    tips: 'Kalau menumpuk lebih dari satu kata sifat, urutannya tidak boleh asal. Buka materi "O-S-A-S-C-O-M-P" untuk urutan lengkapnya beserta contoh setiap huruf.'
   });
 
   P({

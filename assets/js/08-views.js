@@ -181,6 +181,9 @@
     html += ui.card('Kenapa begini', '<p>' + esc(l.why) + '</p>');
     html += ui.card('Bandingkan dulu', ui.whyNot(l.whyNot));
     html += ui.card('Polanya', ui.formula(l.formula));
+    if (l.adjective_order && l.adjective_order.length) {
+      html += ui.card('Huruf per huruf', ui.adjectiveOrder(l.adjective_order), 'accent');
+    }
     html += ui.card('Contoh kalimat', ui.examples(l.examples));
     html += ui.card('Kesalahan yang sering terjadi', ui.mistakes(l.mistakes));
     if (l.clues && l.clues.length) {

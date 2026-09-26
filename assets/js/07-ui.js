@@ -81,19 +81,28 @@
     }).join('') + '</table>';
   }
 
-  function osascomp(words) {
-    if (!words || !words.length) return '';
-    const letters = ['O', 'S', 'A', 'S', 'C', 'O', 'M', 'P'];
-    const meaning = [
-      'objek', 'subjek', 'kata kerja', 'objek', 'pelengkap', 'keterangan', 'modifier', 'pelengkap'
-    ];
-    return '<div class="osc-row">' + words.slice(0, 8).map(function (w, i) {
-      return '<div class="osc-cell" data-word="' + esc(w) + '">' +
-        '<b>' + letters[i] + '</b><span>' + esc(w) + '</span>' +
-        '<span class="tiny">' + esc(meaning[i] || '') + '</span></div>';
-    }).join('') + '</div>' +
-      '<div class="info tiny">O-S-A-S-C-O-M-P adalah alat bantu untuk melihat urutan kata, bukan hukum mutlak. ' +
-      'Banyak kalimat bahasa Inggris tidak mengikuti urutannya, terutama yang memakai kata keterangan di depan.</div>';
+  /* Delapan huruf OSASCOMP (urutan kata sifat). Menerima `adjectiveOrder`
+     dari materi, lalu menampilkannya satu per satu: huruf, nama, artinya,
+     contoh kata sifatnya, dan kapan huruf itu dipakai. */
+  function adjectiveOrder(items) {
+    if (!items || !items.length) return '';
+    const bar = items.map(function (it) {
+      return '<span class="osa-k" title="' + esc(it.name + ' - ' + it.arti) + '">' + esc(it.k) + '</span>';
+    }).join('<span class="osa-arrow" aria-hidden="true">&rarr;</span>');
+
+    const rows = items.map(function (it) {
+      return '<div class="osa-item">' +
+        '<div class="osa-head"><span class="osa-letter">' + esc(it.k) + '</span>' +
+        '<span class="osa-name">' + esc(it.name) + ' <span class="osa-arti">' + esc(it.arti) + '</span></span></div>' +
+        '<p class="osa-what">' + esc(it.what) + '</p>' +
+        '<div class="pill-row">' + (it.ex || []).map(function (w) {
+          return '<span class="pill">' + esc(w) + '</span>';
+        }).join('') + '</div>' +
+        '<p class="osa-when"><b>Kapan dipakai:</b> ' + esc(it.when) + '</p>' +
+        '</div>';
+    }).join('');
+
+    return '<div class="osa-bar" aria-label="urutan OSASCOMP">' + bar + '</div>' + rows;
   }
 
   function noteBox(lessonId) {
@@ -198,7 +207,7 @@
     progress: progress,
     stats: stats,
     anatomyTable: anatomyTable,
-    osascomp: osascomp,
+    adjectiveOrder: adjectiveOrder,
     noteBox: noteBox,
     doneButton: doneButton,
     lessonRow: lessonRow,

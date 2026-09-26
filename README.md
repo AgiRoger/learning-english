@@ -13,8 +13,8 @@
   <img src="https://img.shields.io/badge/frontend-vanilla-2f6f62?style=flat-square" alt="Vanilla">
   <img src="https://img.shields.io/badge/materi-65-a54330?style=flat-square" alt="65 materi">
   <img src="https://img.shields.io/badge/langkah-12-7d600d?style=flat-square" alt="12 langkah">
-  <img src="https://img.shields.io/badge/soal-122-3f5aa6?style=flat-square" alt="122 soal">
-  <img src="https://img.shields.io/badge/baris_kode-5.486-cb3837?style=flat-square" alt="5.486 baris kode">
+  <img src="https://img.shields.io/badge/soal-124-3f5aa6?style=flat-square" alt="122 soal">
+  <img src="https://img.shields.io/badge/baris_kode-5.543-cb3837?style=flat-square" alt="5.543 baris kode">
   <img src="https://img.shields.io/badge/license-MIT-2f6f62?style=flat-square" alt="MIT License">
 </p>
 
@@ -139,12 +139,12 @@ Materi disusun dari kalimat paling sederhana ke kalimat yang panjang dan berlapi
 | Fitur | Jumlah | Keterangan |
 |:--|--:|:--|
 | Materi | 65 | Tiap materi punya: arti, situasi, contoh, "kenapa bukan yang lain", dan latihan. |
-| Contoh kalimat | 266 | Kalimat nyata beserta artinya, bukan kalimat karangan. |
-| Latihan per materi | 84 | Pilihan ganda dengan pembahasan di setiap opsi. |
-| Bank soal | 84 | Semua soal latihan digabung jadi satu bank untuk latihan campuran. |
-| Kesalahan umum | 89 | Kesalahan yang sering terjadi beserta versi yang benar. |
+| Contoh kalimat | 267 | Kalimat nyata beserta artinya, bukan kalimat karangan. |
+| Latihan per materi | 86 | Pilihan ganda dengan pembahasan di setiap opsi. |
+| Bank soal | 86 | Semua soal latihan digabung jadi satu bank untuk latihan campuran. |
+| Kesalahan umum | 93 | Kesalahan yang sering terjadi beserta versi yang benar. |
 | "Kenapa bukan yang lain" | 130 | Membandingkan bentuk yang mirip agar bedanya jelas. |
-| Tanda kota | 171 | Kata atau kalimat penanda yang memancing bentuk tertentu. |
+| Tanda kota | 173 | Kata atau kalimat penanda yang memancing bentuk tertentu. |
 | Situasi real-life | 10 | Situasi nyata seperti di airport, tempat kerja, dan belanja. |
 | Perbandingan | 10 preset + bebas | Bandingkan dua tense dari 65 materi, sesuka hatimu. |
 | Grammar Autopsy | Tak terbatas | Bedah kalimatmu sendiri: subjek, verba, tense, pola, klausa. |

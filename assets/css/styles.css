@@ -369,13 +369,35 @@ table.ana td:first-child{width:150px; color:var(--sub); font-size:.78rem; text-t
 .vform-table th{font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--sub);}
 .vform-table code{font-family:ui-monospace,Menlo,Consolas,monospace;}
 
-/* ---------- OSASCOMP ---------- */
-.osc-row{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:10px 0;}
-@media (max-width:700px){ .osc-row{grid-template-columns:repeat(2,1fr);} }
-.osc-cell{border:1px solid var(--line); border-radius:var(--radius-sm); padding:10px; background:var(--paper); cursor:pointer; text-align:left; font-family:inherit; color:var(--ink);}
-.osc-cell:hover{border-color:var(--accent); background:var(--accent-soft);}
-.osc-cell b{display:block; font-size:1.05rem; color:var(--accent);}
-.osc-cell span{font-size:.74rem; color:var(--sub);}
+/* ---------- OSASCOMP (urutan kata sifat) ---------- */
+.osa-bar{
+  display:flex; flex-wrap:wrap; align-items:center; gap:6px;
+  margin:4px 0 16px; padding:12px 14px;
+  background:var(--accent-soft); border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+}
+.osa-k{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:30px; height:30px; padding:0 6px;
+  font-weight:700; font-size:1rem; color:var(--accent);
+  background:var(--paper); border:1px solid var(--line);
+  border-radius:var(--radius-sm); cursor:help;
+}
+.osa-arrow{color:var(--sub); font-size:.85rem;}
+.osa-item{border:1px solid var(--line); border-radius:var(--radius-sm); padding:12px 14px; margin-bottom:10px; background:var(--paper);}
+.osa-head{display:flex; align-items:center; gap:10px; margin-bottom:6px;}
+.osa-letter{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:34px; height:34px; flex:0 0 34px;
+  font-weight:700; font-size:1.1rem; color:var(--accent);
+  background:var(--accent-soft); border-radius:var(--radius-sm);
+}
+.osa-name{font-weight:700; font-size:1rem; color:var(--ink);}
+.osa-arti{font-weight:400; color:var(--sub); font-size:.82rem;}
+.osa-what{margin:0 0 8px; font-size:.9rem; color:var(--ink);}
+.osa-item .pill-row{margin:0 0 8px;}
+.osa-when{margin:0; font-size:.84rem; color:var(--sub);}
+.osa-when b{color:var(--ink);}
 
 /* ---------- COMPARE ---------- */
 .cmp-head{
