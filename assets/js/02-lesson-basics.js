@@ -571,7 +571,7 @@
     ],
     clues: ['Quantifier: some, any, much, many, few, little, several, all, both, each, every, no'],
     practice: [
-      { q: 'Mana yang BENAR?', opts: ['a my friend', 'my friend', 'the my friend'], ans: 1, explain: 'Cuma satu determiner yang boleh: "my". "My friend" sudah cukup jelas.' }
+      { q: 'Mana yang benar? (memiliki: "___ friend")', opts: ['a my friend', 'my friend', 'the my friend'], ans: 1, explain: 'Cuma satu determiner yang boleh: "my". "My friend" sudah cukup jelas.' }
     ],
     tips: '"Each" dan "every" = satu per satu. "Some" untuk positif, "any" untuk negatif/tanya.'
   });
@@ -695,7 +695,7 @@
     ],
     clues: ['Subjek tunggal pakai: -s (works), -es (goes, watches), -ies (studies)', 'Semua jamak: I, you, we, they + V (tanpa -s)'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['She don\'t like coffee.', 'She doesn\'t likes coffee.', 'She doesn\'t like coffee.'], ans: 2, explain: 'Subjek "she" → pakai "doesn\'t". Setelah "doesn\'t", verb kembali ke bentuk DASAR: "like" (bukan "likes").' }
+      { q: 'Mana yang benar? (subjek "she" + kata kerja "like")', opts: ['She don\'t like coffee.', 'She doesn\'t likes coffee.', 'She doesn\'t like coffee.'], ans: 2, explain: 'Subjek "she" → pakai "doesn\'t". Setelah "doesn\'t", verb kembali ke bentuk DASAR: "like" (bukan "likes").' }
     ],
     tips: 'Kunci besarnya: "does" = tombol RESET. Begitu kamu menulis "does/did", seluruh kata kerja ditense itu wajib bentuk dasar.'
   });
@@ -726,7 +726,7 @@
     ],
     clues: ['Uncountable: rice, water, milk, money, information, advice, furniture, news', 'Bentuknya tunggal tapi berakhiran -s: news, mathematics, physics'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['two childs', 'two children', 'two childrens'], ans: 1, explain: '"Child" → "children". Nggak ada bentuk "childs" maupun "childrens" dalam bahasa Inggris.' }
+      { q: 'Mana yang benar? (bentuk jamak dari "child")', opts: ['two childs', 'two children', 'two childrens'], ans: 1, explain: '"Child" → "children". Nggak ada bentuk "childs" maupun "childrens" dalam bahasa Inggris.' }
     ],
     tips: 'Selalu cek: kata jamak → kata kerja harus ikut berubah (are/have/do, bukan is/has/does).'
   });
@@ -757,7 +757,7 @@
     ],
     clues: ['Uncountable: rice, water, milk, bread, money, time, information, advice, furniture, luggage, news, music, traffic'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['How many rice do you eat?', 'How much rice do you eat?', 'How many rices do you eat?'], ans: 1, explain: '"Rice" uncountable → "how much", bukan "how many". Dan bentuk jamaknya nggak ada.' }
+      { q: 'Mana yang benar? (bertanya jumlah "___ rice")', opts: ['How many rice do you eat?', 'How much rice do you eat?', 'How many rices do you eat?'], ans: 1, explain: '"Rice" uncountable → "how much", bukan "how many". Dan bentuk jamaknya nggak ada.' }
     ],
     tips: 'Catatan: beberapa uncountable bisa dihitung dengan "of": a piece of advice, a glass of milk, a kilo of rice.'
   });
@@ -788,7 +788,7 @@
     ],
     clues: ['Verba-nya harus cocok dengan kata bendanya: is + satu, are + banyak'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['There is two people in the room.', 'There are two people in the room.', 'There are two person in the room.'], ans: 1, explain: '"two people" jamak → "are". Dan "people" sudah bentuk jamak dari "person", nggak ditambah "s".' }
+      { q: 'Mana yang benar? (memberi tahu ada dua orang)', opts: ['There is two people in the room.', 'There are two people in the room.', 'There are two person in the room.'], ans: 1, explain: '"two people" jamak → "are". Dan "people" sudah bentuk jamak dari "person", nggak ditambah "s".' }
     ],
     tips: 'Pertanyaan: "Is there...?" / "Are there...?" — negatif: "There isn\'t / aren\'t".'
   });
@@ -881,7 +881,7 @@
     ],
     clues: ['Subjek "you/they" pakai "do", subjek "he/she/it" pakai "does"', 'Bentuk negativ: don\'t / doesn\'t / didn\'t'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['Does he plays soccer?', 'Does he play soccer?', 'Do he play soccer?'], ans: 1, explain: 'Subjek "he" → "does". Setelah "does", verb bentuk dasar: "play" (bukan "plays").' }
+      { q: 'Mana yang benar? (tanya: "___ he play soccer?")', opts: ['Does he plays soccer?', 'Does he play soccer?', 'Do he play soccer?'], ans: 1, explain: 'Subjek "he" → "does". Setelah "does", verb bentuk dasar: "play" (bukan "plays").' }
     ],
     tips: 'Trik: lihat kata kerja. Kalau di situ sudah ada "s"-nya (plays, works, likes), biasanya kalimat itu TIDAK butuh "do/does".'
   });
@@ -978,7 +978,7 @@
     ],
     clues: ['What + kata benda = "nanya apa itu" — bisa sendiri: "What happened?"', 'Kata tanya bisa jadi subjek (tanpa kata bantu) saat memakai "be" atau V3: "Who broke it?" / "Who is he?"'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['How much cost the ticket?', 'How much does the ticket cost?', 'How much the ticket costs?'], ans: 1, explain: 'Wh + does + S + V = "How much does the ticket cost?" Karena "the ticket" adalah subjek, kata kerjanya kembali ke bentuk dasar.' }
+      { q: 'Mana yang benar? (bertanya harga: "how much ___")', opts: ['How much cost the ticket?', 'How much does the ticket cost?', 'How much the ticket costs?'], ans: 1, explain: 'Wh + does + S + V = "How much does the ticket cost?" Karena "the ticket" adalah subjek, kata kerjanya kembali ke bentuk dasar.' }
     ],
     tips: '"How much" = berapa (untuk harga/uang), "How many" = berapa (untuk jumlah benda countable).'
   });
@@ -1011,7 +1011,7 @@
     ],
     clues: ['Penanda "milik": my, your, his, her, its, our, their + noun | mine, yours, his, hers, ours, theirs (tanpa noun)'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['This is mine pen.', 'This is my pen.', 'This is mine pen is.'], ans: 1, explain: '"My" harus langsung diikuti kata benda: "my pen". "Mine" tidak bisa followed kata benda.' }
+      { q: 'Mana yang benar? ("This is ___ pen")', opts: ['This is mine pen.', 'This is my pen.', 'This is mine pen is.'], ans: 1, explain: '"My" harus langsung diikuti kata benda: "my pen". "Mine" tidak bisa followed kata benda.' }
     ],
     tips: 'Its (miliknya) vs it\'s (it is) — sering tertukar. "The dog wagged its tail." = ekornya.'
   });
@@ -1133,7 +1133,7 @@
     ],
     clues: ['Comparative → "than"', 'Superlative → biasanya + "the" dan kata tempat: "in the class", "in Indonesia"'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['This is more cheaper than that.', 'This is cheaper than that.', 'This is most cheaper than that.'], ans: 1, explain: '"Cheap" cuma 1 silabel → pakai bentuk pendek "cheaper". "More cheaper" salah (dua-duanya), dan "most" itu untuk superlative (dari lebih dari dua).' }
+      { q: 'Mana yang benar? (membandingkan: "cheaper than that")', opts: ['This is more cheaper than that.', 'This is cheaper than that.', 'This is most cheaper than that.'], ans: 1, explain: '"Cheap" cuma 1 silabel → pakai bentuk pendek "cheaper". "More cheaper" salah (dua-duanya), dan "most" itu untuk superlative (dari lebih dari dua).' }
     ],
     tips: '"The" hanya di superb: "the best". Comparative biasanya tanpa "the".'
   });

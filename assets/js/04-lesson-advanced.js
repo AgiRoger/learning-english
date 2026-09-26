@@ -72,7 +72,7 @@
     ],
     clues: ['Selalu diikuti kata kerja bentuk dasar', 'Tidak pernah jadi bentuk lampau (bukan "canned", "musted")'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['She cans drive.', 'She can drive.', 'She can to drive.'], ans: 1, explain: 'Setelah "can" harus kata kerja bentuk dasar "drive", tanpa "to" dan tanpa -s.' },
+      { q: 'Mana yang benar? (modal "can")', opts: ['She cans drive.', 'She can drive.', 'She can to drive.'], ans: 1, explain: 'Setelah "can" harus kata kerja bentuk dasar "drive", tanpa "to" dan tanpa -s.' },
       { q: 'Pilih yang paling tepat: "___ I open the window?" (bertanya izin dengan sopan)', opts: ['Can', 'May', 'Must'], ans: 1, explain: '"May I...?" dipakai untuk meminta izin dengan lebih resmi. "Can I...?" juga bisa, tapi lebih kasual.' }
     ],
     tips: 'Tabel rasakan: must (paksa) > have to (harus, karena situasi) > should (sebaiknya) > could (mungkin/lebih sopan) > might (mungkin, lebih ragu).'
@@ -367,7 +367,7 @@
     clues: ['Kata waktu lampau yang spesifik (yesterday, ago, in 2019, last week) TIDAK bisa dipakai dengan present perfect'],
     practice: [
       { q: 'Pilih: "I ___ here ___ 2018."', opts: ['have lived / since', 'am living / for', 'live / since'], ans: 0, explain: '"Since 2018" menandai titik awal, dan perubahannya masih berlaku → present perfect: "have lived ... since 2018".' },
-      { q: 'Mana yang benar?', opts: ['I have finished it yesterday.', 'I finished it yesterday.', 'I finish it yesterday.'], ans: 1, explain: '"Yesterday" = waktu lampau spesifik. Selesai, jadi past simple: "I finished it yesterday".' }
+      { q: 'Mana yang benar? (dengan kata "yesterday")', opts: ['I have finished it yesterday.', 'I finished it yesterday.', 'I finish it yesterday.'], ans: 1, explain: '"Yesterday" = waktu lampau spesifik. Selesai, jadi past simple: "I finished it yesterday".' }
     ],
     tips: 'Latihan cepat: setiap kali lihat kata waktu, tanya "sudah selesai atau masih berlaku?"'
   });
@@ -403,7 +403,7 @@
     ],
     clues: ['Koma sebelum "because", "so", "but", "and" yang menyambung dua klausa', 'Titik dua (colon) sebelum daftar: "I need: A, B, C"'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['Its a nice day', "It's a nice day", 'Its\'s a nice day'], ans: 1, explain: '"It is" disingkat jadi "it\'s" dengan apostrophe. "Its" tanpa apostrophe = miliknya.' },
+      { q: 'Mana yang benar? ("It is" disingkat)', opts: ['Its a nice day', "It's a nice day", 'Its\'s a nice day'], ans: 1, explain: '"It is" disingkat jadi "it\'s" dengan apostrophe. "Its" tanpa apostrophe = miliknya.' },
       { q: 'Pilih tanda baca yang tepat: "I need three things rice, water, and milk."', opts: ['. (titik)', ': (titik dua)', '! (seru)'], ans: 1, explain: 'Karena setelahnya ada daftar, pakai titik dua.' }
     ],
     tips: 'Baca kalimatmu keras-keras. Kalau kamu perlu berhenti bernapas, kemungkinan besar perlu koma.'
@@ -441,8 +441,8 @@
     ],
     clues: ['Cek 4 hal setiap menulis: (1) -s setelah he/she/it? (2) setelah preposition = object pronoun? (3) since wajib perfect? (4) ada "to" yang berlebihan?'],
     practice: [
-      { q: 'Mana yang benar?', opts: ['She don\'t know.', 'She doesn\'t know.', 'She doesn\'t knows.'], ans: 1, explain: 'Subjek "she" → "doesn\'t", lalu kata kerja bentuk dasar "know".' },
-      { q: 'Mana yang benar?', opts: ['This is my a pen.', 'This is a pen.', 'This is a my pen.'], ans: 1, explain: 'Cuma satu determiner boleh: "a pen" sudah cukup.' }
+      { q: 'Mana yang benar? (subjek "she" + kata kerja "know")', opts: ['She don\'t know.', 'She doesn\'t know.', 'She doesn\'t knows.'], ans: 1, explain: 'Subjek "she" → "doesn\'t", lalu kata kerja bentuk dasar "know".' },
+      { q: 'Mana yang benar? (satu determiner: "a pen")', opts: ['This is my a pen.', 'This is a pen.', 'This is a my pen.'], ans: 1, explain: 'Cuma satu determiner boleh: "a pen" sudah cukup.' }
     ],
     tips: 'Simpan daftar ini. Sebelum kirim email atau chat penting, scan cepat 10 poin ini.'
   });
@@ -474,7 +474,7 @@
     clues: ['Semicolon (;) bisa menggantikan kata "so": "I was tired; I slept early."'],
     practice: [
       { q: 'Gabungkan: "I was hungry. I cooked rice."', opts: ['I was hungry, and I cooked rice.', 'I was hungry so I cooked rice.', 'I was hungry, I cooked rice.'], ans: 1, explain: 'Hubungan antarkedua kalimat ini AKIBAT, jadi pakai "so" (bukan "and").' },
-      { q: 'Mana yang benar?', opts: ['She doesn\'t like coffee and doesn\'t tea.', 'She doesn\'t like coffee and doesn\'t like tea.', 'She don\'t like coffee and doesn\'t like tea.'], ans: 1, explain: 'Setelah doesn\'t, kata kerja harus bentuk dasar: "like tea".' }
+      { q: 'Mana yang benar? (negatif dengan dua kata kerja)', opts: ['She doesn\'t like coffee and doesn\'t tea.', 'She doesn\'t like coffee and doesn\'t like tea.', 'She don\'t like coffee and doesn\'t like tea.'], ans: 1, explain: 'Setelah doesn\'t, kata kerja harus bentuk dasar: "like tea".' }
     ],
     tips: 'Tidak selalu harus disambung. Kalau pesannya cuma satu, kalimat pendek justru lebih kuat.'
   });

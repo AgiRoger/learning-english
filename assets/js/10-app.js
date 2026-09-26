@@ -361,8 +361,12 @@
     const sc = $('#scrim');
     if (sc) sc.addEventListener('click', function () { openSidebar(false); });
 
-    render();
-    EG.appReady = true;
+      /* Bank soal tambahan digabung lebih dulu supaya render() sudah
+         melihat jumlah practice yang final. */
+      if (EG.mergeExtraPractice) EG.mergeExtraPractice();
+
+      render();
+      EG.appReady = true;
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
