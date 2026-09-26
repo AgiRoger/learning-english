@@ -1,6 +1,6 @@
 /* =========================================================
-   13-data-extras.js — data pendukung:
-   langkah kurikulum,-situasi nyata, preset perbandingan,
+   05-data-extras.js — data pendukung:
+   langkah kurikulum, situasi nyata, preset perbandingan,
    latihan koreksi kesalahan, dan latihan terjemahan
    ========================================================= */
 (function (EG) {
@@ -331,7 +331,7 @@
        ikut langkah 1..12. Nomoring yang tampil di daftar
        (1, 2, 3, ... 65) diambil dari urutan di bawah.
      ========================================================= */
-  EG.lessonOrder = [
+  EG.lesson_order = [
     /* --- Dasar --- */
     /* Langkah 1: Kalimat itu apa? */
     'sentence', 'subject', 'verb', 'object', 'complement',
@@ -376,12 +376,12 @@
   (function () {
     const LV = ['Dasar', 'Menengah', 'Lanjut'];
     const rank = {};
-    EG.lessonOrder.forEach(function (id, i) { rank[id] = i; });
+    EG.lesson_order.forEach(function (id, i) { rank[id] = i; });
     let cache = null;
 
-    /* Materi terurut: mengikuti EG.lessonOrder. Materi yang somehow
+    /* Materi terurut: mengikuti EG.lesson_order. Materi yang somehow
        tidak terdaftar tetap ikut tampil, diurutkan level -> langkah. */
-    EG.orderedLessons = function () {
+    EG.ordered_lessons = function () {
       const src = EG.lessons || [];
       if (cache && cache.src === src && cache.n === src.length) return cache.list;
       const list = src.slice().sort(function (a, b) {
@@ -397,7 +397,7 @@
     };
 
     /* Nomor urut materi, dipakai di daftar. */
-    EG.lessonNumber = function (id) {
+    EG.lesson_number = function (id) {
       return rank[id] === undefined ? null : rank[id] + 1;
     };
   })();

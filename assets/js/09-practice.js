@@ -1,5 +1,5 @@
 /* =========================================================
-   32-practice.js — mesin latihan: quiz, koreksi, terjemahan
+   09-practice.js — mesin latihan: quiz, koreksi, terjemahan
    ========================================================= */
 (function (EG) {
   'use strict';

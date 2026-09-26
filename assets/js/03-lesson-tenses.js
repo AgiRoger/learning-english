@@ -1,5 +1,5 @@
 /* =========================================================
-   11-lesson-tenses.js — Step 4 & 5: konsep waktu + 12 tenses
+   03-lesson-tenses.js — Step 4 & 5: konsep waktu + 12 tenses
    ========================================================= */
 (function (EG) {
   'use strict';

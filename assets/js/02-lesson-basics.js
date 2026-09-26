@@ -1,5 +1,5 @@
 /* =========================================================
-   10-lesson-basics.js — Step 1,2,3,6: kalimat, jenis kata,
+   02-lesson-basics.js — Step 1,2,3,6: kalimat, jenis kata,
    struktur kalimat, tanya & negatif
    Skema tiap lesson:
    { id, step, level, cat, title, hook, simple, eli10, meaning,

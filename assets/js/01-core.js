@@ -1,5 +1,5 @@
 /* =========================================================
-   00-core.js — inti: penyimpanan, state, helper
+   01-core.js — inti: penyimpanan, state, helper
    ========================================================= */
 window.EG = window.EG || {};
 

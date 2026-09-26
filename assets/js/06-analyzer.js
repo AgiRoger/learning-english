@@ -1,5 +1,5 @@
 /* =========================================================
-   20-analyzer.js — mesin Grammar Autopsy
+   06-analyzer.js — mesin Grammar Autopsy
    6 langkah: tipe kalimat, klausa, anatomi, phrase,
    bentuk verb, dan jenis kata
    ========================================================= */

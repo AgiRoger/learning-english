@@ -1,5 +1,5 @@
 /* =========================================================
-   30-ui.js — komponen tampilan yang dipakai berulang
+   07-ui.js — komponen tampilan yang dipakai berulang
    ========================================================= */
 (function (EG) {
   'use strict';
@@ -113,7 +113,7 @@
 
   function lessonRow(l) {
     const done = (EG.state.done || []).indexOf(l.id) > -1;
-    const n = EG.lessonNumber ? EG.lessonNumber(l.id) : l.step;
+    const n = EG.lesson_number ? EG.lesson_number(l.id) : l.step;
     const st = (EG.steps || []).filter(function (s) { return s.n === l.step; })[0];
     const tip = st ? 'Langkah ' + st.n + ': ' + st.title : '';
     return '<button class="lesson" data-goto="#/lesson/' + encodeURIComponent(l.id) + '"' +

@@ -1,5 +1,5 @@
 /* =========================================================
-   31-views.js — seluruh halaman aplikasi
+   08-views.js — seluruh halaman aplikasi
    ========================================================= */
 (function (EG) {
   'use strict';
@@ -7,7 +7,7 @@
   const esc = EG.esc;
   const ui = EG.ui;
   const L = function () {
-    return EG.orderedLessons ? EG.orderedLessons() : (EG.lessons || []);
+    return EG.ordered_lessons ? EG.ordered_lessons() : (EG.lessons || []);
   };
 
   function byId(id) {
@@ -115,9 +115,9 @@
     html += (EG.levelOrder || ['Dasar', 'Menengah', 'Lanjut']).map(function (lv) {
       if (!groups[lv]) return '';
       const doneLv = groups[lv].filter(function (l) { return (EG.state.done || []).indexOf(l.id) > -1; }).length;
-      const first = EG.lessonNumber ? EG.lessonNumber(groups[lv][0].id) : null;
+      const first = EG.lesson_number ? EG.lesson_number(groups[lv][0].id) : null;
       const lastL = groups[lv][groups[lv].length - 1];
-      const lastNo = EG.lessonNumber ? EG.lessonNumber(lastL.id) : null;
+      const lastNo = EG.lesson_number ? EG.lesson_number(lastL.id) : null;
       const range = first !== null && lastNo !== null
         ? ' <span class="sub">materi ' + first + (lastNo !== first ? '-' + lastNo : '') + '</span>' : '';
 

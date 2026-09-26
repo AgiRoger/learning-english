@@ -1,5 +1,5 @@
 /* =========================================================
-   12-lesson-advanced.js — Step 7,8,9,10,11:
+   04-lesson-advanced.js — Step 7,8,9,10,11:
    modal, conditional, passive, phrase, clause, punctuation, dll
    ========================================================= */
 (function (EG) {

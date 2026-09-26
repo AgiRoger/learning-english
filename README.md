@@ -194,16 +194,16 @@ Karena ini HTML, CSS, dan JS murni, bisa langsung ditaruh di mana saja:
 |   |-- css/
 |   |   `-- styles.css          # 492 baris, semua style + dua tema
 |   `-- js/                     # 5.000+ baris, JavaScript murni
-|       |-- 00-core.js          # State, storage, settings, tema
-|       |-- 10-lesson-basics.js # 32 materi dasar
-|       |-- 11-lesson-tenses.js # 12 tense
-|       |-- 12-lesson-advanced.js
-|       |-- 13-data-extras.js   # Bank soal, perbandingan, real-life
-|       |-- 20-analyzer.js      # Otak Grammar Autopsy
-|       |-- 30-ui.js            # Komponen UI yang dipakai ulang
-|       |-- 31-views.js         # Router + seluruh halaman
-|       |-- 32-practice.js      # Quiz, koreksi, terjemahan
-|       `-- 99-app.js           # Bootstrap aplikasi
+|       |-- 01-core.js          # State, storage, settings, tema
+|       |-- 02-lesson-basics.js # 32 materi dasar
+|       |-- 03-lesson-tenses.js # 12 tense
+|       |-- 04-lesson-advanced.js
+|       |-- 05-data-extras.js   # Bank soal, perbandingan, real-life
+|       |-- 06-analyzer.js      # Otak Grammar Autopsy
+|       |-- 07-ui.js            # Komponen UI yang dipakai ulang
+|       |-- 08-views.js         # Router + seluruh halaman
+|       |-- 09-practice.js      # Quiz, koreksi, terjemahan
+|       `-- 10-app.js           # Bootstrap aplikasi
 |-- docs/
 |   |-- banner.svg              # Banner README
 |   `-- img/                    # Screenshot untuk dokumentasi
@@ -218,9 +218,10 @@ Karena ini HTML, CSS, dan JS murni, bisa langsung ditaruh di mana saja:
 
 ## Cara kerjanya
 
+- **Penamaan file** - nomor di depan nama file adalah **urutan muat**, bukan hiasan. `01` dimuat pertama, `10` terakhir. Aturannya satu: sebuah file hanya boleh memakai file bernomor lebih kecil darinya, tidak boleh sebaliknya. Contohnya `08-views.js` memakai `EG.ui` dari `07-ui.js`, jadi `07` wajib muat lebih dulu. Karena itu urutannya tidak boleh diacak.
 - **Routing** - berbasis hash (`#/lesson/tense-p-simple`). Tanpa server, tanpa halaman 404.
-- **Data-driven** - semua materi, soal, dan preset adalah array of object di file `1x-*.js`. Tambah materi? Tambah satu object, tidak menyentuh kode.
-- **Urutan belajar** - `EG.lessonOrder` di `13-data-extras.js` adalah satu-satunya sumber urutan. Daftar materi, filter, dan nomor urut 1-65 semuanya mengikuti ini.
+- **Data-driven** - semua materi, soal, dan preset adalah array of object di file `0x-*.js`. Tambah materi? Tambah satu object, tidak menyentuh kode.
+- **Urutan belajar** - `EG.lesson_order` di `05-data-extras.js` adalah satu-satunya sumber urutan. Daftar materi, filter, dan nomor urut 1-65 semuanya mengikuti ini.
 - **Tema** - CSS variable dengan atribut `data-theme` di `<html>`, disimpan di `localStorage`, dilengkapi `color-scheme` agar dropdown native dan scrollbar ikut tema.
 - **Aksesibilitas** - kontras warna sudah diverifikasi minimal 4.5:1 (WCAG AA) di kedua tema dan di semua halaman.
 - **Autopsy** - parser berbasis aturan, bukan machine learning: pendeteksi subjek, verba, objek, pemisah klausa, 12 jenis tense, conditional, dan relative clause. Semua berjalan di browser.
