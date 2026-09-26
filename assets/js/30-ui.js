@@ -1,0 +1,213 @@
+/* =========================================================
+   30-ui.js — komponen tampilan yang dipakai berulang
+   ========================================================= */
+(function (EG) {
+  'use strict';
+
+  const esc = EG.esc;
+
+  function card(title, body, cls) {
+    return '<section class="card ' + (cls || '') + '">' +
+      (title ? '<h3>' + title + '</h3>' : '') + body + '</section>';
+  }
+
+  function label(text) {
+    return '<div class="label">' + esc(text) + '</div>';
+  }
+
+  function pills(items) {
+    return '<div class="pill-row">' + items.map(function (t, i) {
+      const mod = ['gold', 'brick', 'blue', 'violet', 'ghost'][i % 5];
+      return '<span class="pill ' + mod + '">' + esc(t) + '</span>';
+    }).join('') + '</div>';
+  }
+
+  function levelBadge(level) {
+    const map = { Dasar: '', Menengah: 'gold', Lanjut: 'brick' };
+    return '<span class="pill ' + (map[level] || '') + '">' + esc(level || '') + '</span>';
+  }
+
+  function stepBadge(n) {
+    return '<span class="step-no">' + n + '</span>';
+  }
+
+  function mark(text) {
+    return esc(text).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+  }
+
+  function examples(items) {
+    if (!items || !items.length) return '<p class="sub">Belum ada contoh.</p>';
+    return items.map(function (ex) { return '<div class="ex">' + mark(ex) + '</div>'; }).join('');
+  }
+
+  function mistakes(items) {
+    if (!items || !items.length) return '<p class="sub">Belum ada catatan kesalahan.</p>';
+    return items.map(function (m) {
+      return '<div class="mis">' +
+        '<div><b class="w">Salah:</b> <s>' + esc(m.wrong) + '</s></div>' +
+        '<div><b class="r">Benar:</b> ' + esc(m.right) + '</div>' +
+        '<div class="tiny" style="margin-top:5px">' + esc(m.why) + '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  function whyNot(items) {
+    if (!items || !items.length) return '<p class="sub">Tidak ada perbandingan tambahan.</p>';
+    return items.map(function (w) {
+      return '<div class="info"><b>' + esc(w.t) + '</b><br>' + esc(w.d) + '</div>';
+    }).join('');
+  }
+
+  function formula(text) {
+    if (!text) return '';
+    return '<div class="formula">' + esc(text) + '</div>';
+  }
+
+  function progress(done, total, labelText) {
+    const p = EG.pct(done, total);
+    return '<div class="track"><div class="fill" style="width:' + p + '%"></div></div>' +
+      '<div class="tiny sub">' + esc(labelText || (done + ' dari ' + total + ' materi sudah paham')) + '</div>';
+  }
+
+  function stats(items) {
+    return '<div class="grid3">' + items.map(function (s) {
+      return '<div class="stat"><b>' + esc(s.value) + '</b><span>' + esc(s.label) + '</span></div>';
+    }).join('') + '</div>';
+  }
+
+  function anatomyTable(rows) {
+    return '<table class="ana">' + rows.map(function (r) {
+      return '<tr><td>' + esc(r[0]) + '</td><td>' + (r[2] ? r[1] : esc(r[1] || '—')) + '</td></tr>';
+    }).join('') + '</table>';
+  }
+
+  function osascomp(words) {
+    if (!words || !words.length) return '';
+    const letters = ['O', 'S', 'A', 'S', 'C', 'O', 'M', 'P'];
+    const meaning = [
+      'objek', 'subjek', 'kata kerja', 'objek', 'pelengkap', 'keterangan', 'modifier', 'pelengkap'
+    ];
+    return '<div class="osc-row">' + words.slice(0, 8).map(function (w, i) {
+      return '<div class="osc-cell" data-word="' + esc(w) + '">' +
+        '<b>' + letters[i] + '</b><span>' + esc(w) + '</span>' +
+        '<span class="tiny">' + esc(meaning[i] || '') + '</span></div>';
+    }).join('') + '</div>' +
+      '<div class="info tiny">O-S-A-S-C-O-M-P adalah alat bantu untuk melihat urutan kata, bukan hukum mutlak. ' +
+      'Banyak kalimat bahasa Inggris tidak mengikuti urutannya, terutama yang memakai kata keterangan di depan.</div>';
+  }
+
+  function noteBox(lessonId) {
+    const val = (EG.state.notes && EG.state.notes[lessonId]) || '';
+    return '<div class="note-box">' +
+      '<label class="fld" for="note-' + esc(lessonId) + '">Catatan pribadi</label>' +
+      '<textarea id="note-' + esc(lessonId) + '" data-note="' + esc(lessonId) + '" placeholder="Tulis catatanmu di sini...">' + esc(val) + '</textarea>' +
+      '<div class="tiny sub mt">Tersimpan otomatis di perangkat ini.</div>' +
+      '</div>';
+  }
+
+  function doneButton(lessonId) {
+    const done = (EG.state.done || []).indexOf(lessonId) > -1;
+    return '<button class="btn ' + (done ? 'soft' : '') + '" data-done="' + esc(lessonId) + '">' +
+      (done ? 'Sudah paham (klik untuk batalkan)' : 'Tandai sudah paham') + '</button>';
+  }
+
+  function lessonRow(l) {
+    const done = (EG.state.done || []).indexOf(l.id) > -1;
+    const n = EG.lessonNumber ? EG.lessonNumber(l.id) : l.step;
+    const st = (EG.steps || []).filter(function (s) { return s.n === l.step; })[0];
+    const tip = st ? 'Langkah ' + st.n + ': ' + st.title : '';
+    return '<button class="lesson" data-goto="#/lesson/' + encodeURIComponent(l.id) + '"' +
+      (tip ? ' title="' + esc(tip) + '"' : '') + '>' +
+      '<span class="step-no">' + (n === null ? '' : n) + '</span>' +
+      '<span style="flex:1"><b>' + esc(l.title) + '</b>' +
+      '<span class="sub">' + esc(l.cat) + '</span></span>' +
+      (done ? '<span class="tick">Selesai</span>' : '<span class="tiny sub">Buka</span>') +
+      '</button>';
+  }
+
+  function lessonCard(l) {
+    const done = (EG.state.done || []).indexOf(l.id) > -1;
+    return '<a class="lesson lcard' + (done ? ' done' : '') + '" href="#/lesson/' + encodeURIComponent(l.id) + '">' +
+      '<span style="flex:1"><b>' + esc(l.title) + '</b>' +
+      '<span class="sub">' + esc(l.hook || l.simple) + '</span></span>' +
+      (done ? '<span class="tick">Selesai</span>' : '') + '</a>';
+  }
+
+  function empty(text) {
+    return '<div class="card"><p class="sub">' + esc(text) + '</p></div>';
+  }
+
+  function backLink(hash, text) {
+    return '<div class="back"><button class="link" data-goto="' + esc(hash) + '">← ' + esc(text) + '</button></div>';
+  }
+
+  function quizBlock(id, questions, opts) {
+    const o = opts || {};
+    return '<div class="quiz" data-quiz="' + esc(id) + '">' + questions.map(function (q, i) {
+      return '<div class="q" data-q="' + i + '">' +
+        '<p class="q-text"><b>' + (i + 1) + '.</b> ' + mark(q.q) + '</p>' +
+        q.opts.map(function (op, j) {
+          return '<button class="opt" data-pick="' + j + '">' + mark(op) + '</button>';
+        }).join('') +
+        '<div class="explain" hidden></div>' +
+        '</div>';
+    }).join('') +
+      (o.checkAll ? '<div class="btn-row"><button class="btn" data-checkall="' + esc(id) + '">Periksa semua</button></div>' : '') +
+      '</div>';
+  }
+
+  /* Dropdown daftar materi, dikelompokkan per level. */
+  function lessonSelect(id, value, label) {
+    const levels = EG.levelOrder || ['Dasar', 'Menengah', 'Lanjut'];
+    const groups = levels.map(function (lv) {
+      const list = (EG.lessons || []).filter(function (l) { return l.level === lv; });
+      if (!list.length) return '';
+      return '<optgroup label="' + esc(lv) + '">' + list.map(function (l) {
+        return '<option value="' + esc(l.id) + '"' + (l.id === value ? ' selected' : '') + '>' +
+          esc(l.title) + '</option>';
+      }).join('') + '</optgroup>';
+    }).join('');
+    return '<label class="fld" for="' + esc(id) + '">' + esc(label) + '</label>' +
+      '<select id="' + esc(id) + '">' + groups + '</select>';
+  }
+
+  /* Satu baris perbandingan: label di kiri, dua nilai berdampingan di kanan. */
+  function compareRow(title, a, b) {
+    function cell(v) {
+      if (v === null || v === undefined || v === '') return '<span class="sub">—</span>';
+      return v;
+    }
+    return '<div class="cmp-row">' +
+      '<div class="cmp-key">' + esc(title) + '</div>' +
+      '<div class="cmp-cell">' + cell(a) + '</div>' +
+      '<div class="cmp-cell">' + cell(b) + '</div>' +
+      '</div>';
+  }
+
+  EG.ui = {
+    card: card,
+    label: label,
+    pills: pills,
+    levelBadge: levelBadge,
+    stepBadge: stepBadge,
+    mark: mark,
+    examples: examples,
+    mistakes: mistakes,
+    whyNot: whyNot,
+    formula: formula,
+    progress: progress,
+    stats: stats,
+    anatomyTable: anatomyTable,
+    osascomp: osascomp,
+    noteBox: noteBox,
+    doneButton: doneButton,
+    lessonRow: lessonRow,
+    lessonCard: lessonCard,
+    empty: empty,
+    backLink: backLink,
+    quizBlock: quizBlock,
+    lessonSelect: lessonSelect,
+    compareRow: compareRow
+  };
+
+})(window.EG);

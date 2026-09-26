@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="English Grammar — Dari Bingung Jadi Paham">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#191b17"/>
+      <stop offset="55%" stop-color="#1d3b34"/>
+      <stop offset="100%" stop-color="#2f6f62"/>
+    </linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="400" fill="url(#g)"/>
+  <rect width="1280" height="200" fill="url(#f)"/>
+
+  <g opacity=".10" fill="none" stroke="#fbfaf6" stroke-width="1.4">
+    <path d="M60 352h1160"/>
+    <path d="M980 40v320M1060 40v320M1140 40v320M1220 40v320"/>
+  </g>
+
+  <g font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif">
+    <text x="72" y="112" fill="#8fd3bd" font-size="19" font-weight="600" letter-spacing="3.4">BELAJAR GRAMMAR TANPA HAFAL TABEL</text>
+
+    <text x="72" y="196" fill="#fbfaf6" font-size="68" font-weight="800" letter-spacing="-1.6">English Grammar</text>
+    <text x="72" y="252" fill="#cfe6dc" font-size="30" font-weight="600">Dari Bingung Jadi Paham</text>
+
+    <text x="72" y="300" fill="#9dbdb3" font-size="19">Belajar dari makna dan situasi — bukan dari daftar definisi.</text>
+
+    <g transform="translate(72,332)">
+      <rect x="0" y="0" width="150" height="38" rx="19" fill="#fbfaf6" fill-opacity=".12" stroke="#fbfaf6" stroke-opacity=".22"/>
+      <text x="75" y="25" fill="#fbfaf6" font-size="16" font-weight="600" text-anchor="middle">65 materi</text>
+
+      <rect x="162" y="0" width="152" height="38" rx="19" fill="#fbfaf6" fill-opacity=".12" stroke="#fbfaf6" stroke-opacity=".22"/>
+      <text x="238" y="25" fill="#fbfaf6" font-size="16" font-weight="600" text-anchor="middle">12 langkah</text>
+
+      <rect x="326" y="0" width="214" height="38" rx="19" fill="#fbfaf6" fill-opacity=".12" stroke="#fbfaf6" stroke-opacity=".22"/>
+      <text x="433" y="25" fill="#fbfaf6" font-size="16" font-weight="600" text-anchor="middle">122 soal latihan</text>
+
+      <rect x="552" y="0" width="230" height="38" rx="19" fill="#fbfaf6" fill-opacity=".12" stroke="#fbfaf6" stroke-opacity=".22"/>
+      <text x="667" y="25" fill="#fbfaf6" font-size="16" font-weight="600" text-anchor="middle">Jalan offline, 0 dependency</text>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="17" fill="#fbfaf6">
+    <g opacity=".92">
+      <rect x="962" y="70"  width="252" height="34" rx="8" fill="#2f6f62" fill-opacity=".55" stroke="#8fd3bd" stroke-opacity=".35"/>
+      <text x="976" y="93">Subject + Verb + Object</text>
+
+      <rect x="962" y="116" width="252" height="34" rx="8" fill="#2f6f62" fill-opacity=".40" stroke="#8fd3bd" stroke-opacity=".28"/>
+      <text x="976" y="139">Present Perfect + V3</text>
+
+      <rect x="962" y="162" width="252" height="34" rx="8" fill="#2f6f62" fill-opacity=".55" stroke="#8fd3bd" stroke-opacity=".35"/>
+      <text x="976" y="185">I have been studying</text>
+
+      <rect x="962" y="208" width="252" height="34" rx="8" fill="#a54330" fill-opacity=".45" stroke="#f0a894" stroke-opacity=".40"/>
+      <text x="976" y="231" fill="#ffd9cf">✗ I have went there</text>
+
+      <rect x="962" y="254" width="252" height="34" rx="8" fill="#276f36" fill-opacity=".50" stroke="#a5e0b4" stroke-opacity=".40"/>
+      <text x="976" y="277" fill="#d8f5e0">✓ I went there</text>
+    </g>
+
+    <text x="962" y="322" fill="#8fd3bd" font-size="15" opacity=".85">→ Grammar Autopsy</text>
+    <text x="962" y="344" fill="#9dbdb3" font-size="14">bedah kalimat, bukan hafal tabel</text>
+  </g>
+</svg>

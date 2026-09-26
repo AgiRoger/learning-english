@@ -1,0 +1,11 @@
+# Normalisasi line ending: LF di repo, CRLF di Windows bila perlu
+* text=auto eol=lf
+
+# Binary
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.ico -text
+*.woff -text
+*.woff2 -text
