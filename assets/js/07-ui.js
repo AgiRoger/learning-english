@@ -86,12 +86,14 @@
      contoh kata sifatnya, dan kapan huruf itu dipakai. */
   function adjectiveOrder(items) {
     if (!items || !items.length) return '';
-    const bar = items.map(function (it) {
-      return '<span class="osa-k" title="' + esc(it.name + ' - ' + it.arti) + '">' + esc(it.k) + '</span>';
+    const bar = items.map(function (it, i) {
+      return '<button type="button" class="osa-k" id="osa-btn-' + i + '" data-osa="' + i +
+        '" aria-expanded="false" aria-controls="osa-panel-' + i + '" title="' +
+        esc(it.name + ' - ' + it.arti) + '">' + esc(it.k) + '</button>';
     }).join('<span class="osa-arrow" aria-hidden="true">&rarr;</span>');
 
-    const rows = items.map(function (it) {
-      return '<div class="osa-item">' +
+    const rows = items.map(function (it, i) {
+      return '<div class="osa-item" id="osa-panel-' + i + '" role="region" aria-labelledby="osa-btn-' + i + '" hidden>' +
         '<div class="osa-head"><span class="osa-letter">' + esc(it.k) + '</span>' +
         '<span class="osa-name">' + esc(it.name) + ' <span class="osa-arti">' + esc(it.arti) + '</span></span></div>' +
         '<p class="osa-what">' + esc(it.what) + '</p>' +
@@ -102,7 +104,43 @@
         '</div>';
     }).join('');
 
-    return '<div class="osa-bar" aria-label="urutan OSASCOMP">' + bar + '</div>' + rows;
+    return '<p class="osa-hint">Ketuk hurufnya untuk melihat penjelasannya satu per satu.</p>' +
+      '<div class="osa-bar" aria-label="urutan OSASCOMP">' + bar + '</div>' +
+      '<div class="osa-panels">' + rows + '</div>';
+  }
+
+  /* Huruf O-S-A-S-C-O-M-P jadi tombol: yang diklik baru terbuka penjelasannya,
+     jadi tidak perlu menggulir jauh. Accordion: satu huruf terbuka satu kali. */
+  function bindOsa(root) {
+    if (!root) return;
+    const bar = root.querySelector ? root.querySelector('.osa-bar') : null;
+    if (!bar || bar.getAttribute('data-osa-bound')) return;
+    bar.setAttribute('data-osa-bound', '1');
+
+    function panelOf(btn) {
+      return root.querySelector('#osa-panel-' + btn.getAttribute('data-osa'));
+    }
+    function closeAll() {
+      Array.prototype.forEach.call(bar.querySelectorAll('.osa-k'), function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        const p = panelOf(b);
+        if (p) p.hidden = true;
+      });
+    }
+    function open(btn) {
+      const p = panelOf(btn);
+      if (!p) return;
+      btn.setAttribute('aria-expanded', 'true');
+      p.hidden = false;
+    }
+
+    bar.addEventListener('click', function (e) {
+      const btn = e.target.closest ? e.target.closest('.osa-k') : null;
+      if (!btn) return;
+      const wasOpen = btn.getAttribute('aria-expanded') === 'true';
+      closeAll();
+      if (!wasOpen) open(btn);
+    });
   }
 
   function noteBox(lessonId) {
@@ -208,6 +246,7 @@
     stats: stats,
     anatomyTable: anatomyTable,
     adjectiveOrder: adjectiveOrder,
+    bindOsa: bindOsa,
     noteBox: noteBox,
     doneButton: doneButton,
     lessonRow: lessonRow,

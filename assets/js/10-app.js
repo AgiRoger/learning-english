@@ -137,6 +137,7 @@
 
   /* ---------------- PASCA RENDER ---------------- */
   function afterRender(r) {
+    if (EG.ui && EG.ui.bindOsa) EG.ui.bindOsa(content);
     const seg = r.path.replace(/^#\/?/, '').split('/').filter(Boolean);
 
     /* kuis di dalam halaman lesson */
