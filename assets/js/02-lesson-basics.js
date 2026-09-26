@@ -270,9 +270,9 @@
       { k: 'A', name: 'Age', arti: 'usia', what: 'Menyatakan umur atau kebaruan bendanya.', ex: ['old', 'new', 'young', 'ancient', 'antique', 'modern', 'brand-new'], when: 'Setelah Size. Bisa untuk benda ("an old house") maupun untuk orang ("an old man").' },
       { k: 'S', name: 'Shape', arti: 'bentuk', what: 'Menyatakan bentuk bendanya.', ex: ['round', 'square', 'rectangular', 'circular', 'oval', 'triangular', 'flat'], when: 'Setelah Age. Cuma perlu kalau bendanya memang berbentuk yang khas, seperti meja, jendela, atau rambu lalu lintas.' },
       { k: 'C', name: 'Color', arti: 'warna', what: 'Menyatakan warnanya.', ex: ['red', 'blue', 'green', 'black', 'white', 'pink', 'grey', 'dark', 'light'], when: 'Setelah Shape. Kalau dua warna, gabung dengan and: "a black and white photo".' },
-      { k: 'O', name: 'Origin', arti: 'asal', what: 'Menyatakan asal pembuatan atau asalnya. Hampir selalu berupa nama negara, kota, atau daerah, dan ditulis dengan huruf besar.', ex: ['French', 'Indonesian', 'Japanese', 'American', 'Brazilian', 'Turkish', 'northern', 'southern'], when: 'Setelah Color. "French wine" berarti wine yang berasal dari Prancis. Dan "northern" bukan nama negara, tapi arah: "northern Europe".' },
+      { k: 'O', name: 'Origin', arti: 'asal', what: 'Menyatakan asal pembuatan atau asalnya. Hampir selalu berupa nama negara, kota, atau daerah, dan nama itu sendiri ditulis dengan huruf besar. Tapi yang menyatakan arah atau wilayah ditulis huruf kecil: "northern" dan "southern".', ex: ['French', 'Indonesian', 'Japanese', 'American', 'Brazilian', 'Turkish', 'northern', 'southern'], when: 'Setelah Color. "French wine" berarti wine yang berasal dari Prancis. Dan "northern" bukan nama negara, tapi arah: "northern Europe".' },
       { k: 'M', name: 'Material', arti: 'bahan', what: 'Menyatakan bahan pembuatannya. Bentuknya dua: kata benda ditambah -en (wood menjadi wooden), atau langsung nama bahannya (silver, steel, glass, cotton).', ex: ['wooden', 'silver', 'steel', 'plastic', 'leather', 'glass', 'cotton', 'iron'], when: 'Setelah Origin. Perhatikan pasangan yang tidak bisa ditukar: "a wooden spoon", bukan "a wood spoon". Tapi "a silver ring" dan "a steel bridge" memang boleh.' },
-      { k: 'P', name: 'Purpose', arti: 'untuk apa', what: 'Menyatakan kegunaan bendanya. Bentuknya kata benda yang dipakai apa adanya, tanpa -ing dan tanpa -ed.', ex: ['walking', 'sleeping', 'drinking', 'wedding', 'tennis', 'hiking', 'reading'], when: 'Selalu paling dekat dengan kata bendanya, di urutan terakhir. "a sleeping bag", bukan "a bag sleeping".' }
+      { k: 'P', name: 'Purpose', arti: 'untuk apa', what: 'Menyatakan kegunaan bendanya. Bentuknya biasanya kata ber-imbuhan -ing (walking, sleeping), kadang kata benda apa adanya (wedding, tennis).', ex: ['walking', 'sleeping', 'drinking', 'wedding', 'tennis', 'hiking', 'reading'], when: 'Selalu paling dekat dengan kata bendanya, di urutan terakhir. "a sleeping bag", bukan "a bag sleeping".' }
     ],
     examples: [
       'a **lovely** **little** **old** **green** **French** **wooden** **table** → lovely (Op), little (Sz), old (Ag), green (Co), French (Or), wooden (Ma).',
@@ -285,12 +285,12 @@
       { wrong: 'a red big car', right: 'a big red car', why: 'Size (big) selalu mendahului Color (red), bukan sebaliknya.' },
       { wrong: 'a new leather small bag', right: 'a small new leather bag', why: 'Size dulu, lalu Age, baru Material.' },
       { wrong: 'a bag sleeping', right: 'a sleeping bag', why: 'Purpose harus tepat sebelum kata benda, bukan sesudahnya.' },
-      { wrong: 'a very red car', right: 'a bright red car', why: 'very tidak bisa dipakai di depan kata sifat warna. Pakai penguat yang sudah mengandung warna: bright, dark, light, pale.' }
+      { wrong: 'a very red car', right: 'a bright red car', why: '"very red" sebenarnya boleh dipakai tapi jarang terdengar dalam percakapan sehari-hari. Pakai penguat yang warnanya sudah jelas: bright, dark, light, pale.' }
     ],
     clues: [
       'Huruf O muncul dua kali. Yang pertama Opinion, yang kedua Origin.',
       'Semakin ke kanan, semakin spesifik: Opinion paling umum, Purpose paling khusus.',
-      'Purpose bukan kata kerja. "sleeping" di "sleeping bag" artinya "untuk tidur", bukan "sedang tidur".',
+      'Purpose menjelaskan kegunaan, bukan tindakan. "sleeping" di "sleeping bag" dibaca "untuk tidur", bukan "sedang tidur".',
       'Nama negara ditulis huruf besar: French, Indonesian, Japanese.',
       'Kebanyakan orang hanya memakai satu atau dua. Tidak perlu memaksakan semua delapan.'
     ],
